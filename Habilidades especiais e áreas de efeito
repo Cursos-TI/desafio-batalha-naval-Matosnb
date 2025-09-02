@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+#define TAM 10   // tamanho do tabuleiro (10x10)
+#define NAVIO 3  // valor para navio
+#define AGUA 0   // valor para água
+#define HABIL 5  // valor para área afetada por habilidade
+#define TAM_HAB 5 // tamanho das matrizes de habilidade (5x5)
+
+// Função para exibir o tabuleiro
+void exibirTabuleiro(int tabuleiro[TAM][TAM]) {
+    printf("\n===== Tabuleiro Batalha Naval =====\n\n");
+    for (int i = 0; i < TAM; i++) {
+        for (int j = 0; j < TAM; j++) {
+            if (tabuleiro[i][j] == AGUA) printf("0 ");
+            else if (tabuleiro[i][j] == NAVIO) printf("3 ");
+            else if (tabuleiro[i][j] == HABIL) printf("5 ");
+        }
+        printf("\n");
+    }
+}
+
+// Função para criar a matriz Cone (5x5)
+void criarCone(int cone[TAM_HAB][TAM_HAB]) {
+    for (int i = 0; i < TAM_HAB; i++) {
+        for (int j = 0; j < TAM_HAB; j++) {
+            if (j >= (TAM_HAB / 2 - i) &&_
